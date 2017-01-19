@@ -8,7 +8,7 @@
 
 
 
-*this is list one
- *this is an indentation
+* this is list one
+ * this is an indentation
  
  `this should be code`
