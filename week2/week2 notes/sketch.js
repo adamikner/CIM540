@@ -12,6 +12,12 @@ var mouthY = 300;
 var mouthW = 400;
 var mouthH = 40;
 
+var eye1X = 70;
+var eye1Y = 70;
+
+var eye2offset = 300;
+var pupiloffset = 20;
+
 function setup() {
 //console.log(num);
 //console.log("num + num2= " + (num + num2));
@@ -52,10 +58,30 @@ comment.
 function draw() {
 //  console.log(num);
     // x, y, width, height
-    ellipse(70,70,100,100);
     
+    //eye1
+    fill(255);
+    ellipse(eye1X,eye1Y,100,100);
+    
+    //eye1 pupil
+    fill(0,0,250);
+    ellipse(eye1X,eye1Y + pupiloffset,25,50);
+    
+    //eye2
+    fill(255);
+    ellipse(eye1X + eye2offset,eye1Y,100,100);
+    
+    //eye2 pupil
+    fill(0,0,250);
+    ellipse(eye1X + eye2offset,eye1Y + pupiloffset,25,50);
+    
+    //nose
+    fill(255);
     ellipse(width/2,height/2,50,50);
     
+    //mouth
     rect(mouthX,mouthY,mouthW,mouthH);
+    
+    //lipline
     line(mouthX, mouthY + mouthH/2, mouthX + mouthW, mouthY + mouthH/2);
 }
