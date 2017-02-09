@@ -28,13 +28,8 @@ function draw() {
     line(start,base - 150,end,base - 150);
     line(start,base - 200,end,base - 200);
     
-    
-    
     ellipse(50,200,50,50);
     ellipse(150,150,50,50);
-    
-    
-
     
     line(25,200,25,325);
     line(125,150,125,275);
@@ -60,7 +55,6 @@ function draw() {
 function mousePressed(){
     background(81,180,246);
     pressed = true;
-    randNum = random(256);
     fill(random(256),random(256),random(256));
     
 }
