@@ -2,8 +2,8 @@ var num = 250;
 var num2 = 173;
 var num3 = 106;
 var base = 350;
-var start = 0
-var end = 700
+var start = 0;
+var end = 700;
 
 var pressed = false;
 
@@ -55,7 +55,7 @@ function draw() {
 function mousePressed(){
     background(81,180,246);
     pressed = true;
-    fill(random(256),random(256),random(256));
+    //fill(random(256),random(256),random(256));
     
 }
 

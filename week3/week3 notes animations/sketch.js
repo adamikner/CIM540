@@ -35,9 +35,13 @@ function draw() {
    frameRate(30);
     
     background(backgroundColor);
+   
+    //cursor ellipse
     ellipse(mouseX,mouseY,10,10);
     
     mapX = map(mouseX,0,width,-10,10);
+    //mapX is a var = map--which is a function, mouseX is a built in variable based on your mouse position, 0 is starting position, width=end position, and the the -10,10 are what you're mapping from to what you're mapping to (how it is broken down)
+    
    // ellipse(random(width),random(height),50,50);
     
     
