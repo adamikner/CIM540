@@ -54,6 +54,7 @@ Psuedocode:
 
 NOTE: In my particular code, there is an additional "newGame" button that is always hidden. The user does not need to see it or click it, but some componnet of it coincides with the start button, allowing it reset the game once it has already been played. 
     
+![alt tag](https://github.com/adamikner/CIM540/blob/master/Screenshot.png)
     
     
     
