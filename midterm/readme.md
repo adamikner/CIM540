@@ -19,6 +19,7 @@ CODE PLAN
 Inputs:
 
 Button: Click button to start
+
 mousePressed: User will click on keys to copy pattern intially displayed
 
 Outputs:
