@@ -1,6 +1,3 @@
-
-<!--
-
 TUTORIAL ON A SOUND FILE LIBRARY
 
 
