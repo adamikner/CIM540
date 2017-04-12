@@ -7,6 +7,10 @@ Code parts:
 
 First I got the mp3 files I wanted to use, and grouped them together in a folder for easy access.
 
+Also, make sure to go into the index.html, and uncomment the sound library line 
+
+<script language="javascript" src="libraries/p5.sound.js"></script>
+
 Another initial step is to preload the soundfiles using the preload function
 
 function preload() {
