@@ -1,4 +1,8 @@
+
+<!--
+
 TUTORIAL ON A SOUND FILE LIBRARY
+
 
 In my final project, sound is an integral portion, as it is an interactive piano game. When the pattern is played, the notes sound, as well as when the user presses the keys themselves via the mouse.
 
@@ -14,7 +18,7 @@ Also, make sure to go into the index.html, and uncomment the sound library line
 Another initial step is to preload the soundfiles using the preload function
 
 function preload() {
-    CSound = loadSound('sounds/C.mp3');
+    2CSound = loadSound('sounds/C.mp3');
     DSound = loadSound('sounds/D.mp3');
     ESound = loadSound('sounds/E.mp3');
     FSound = loadSound('sounds/F.mp3');
@@ -24,6 +28,7 @@ function preload() {
 }
 
 from there, I wanted each sound file to play when its associated key would be illuminated. Therefore, I set up true/false statements within this if/else statement.
+
 
 //D
     if (currentLetter == 'd') {
