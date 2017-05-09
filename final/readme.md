@@ -41,7 +41,7 @@ Psuedocode:
 6. When counter reaches length of array, counter = 0
 7. Game = false
 8. Checking = true
-9. Divide piano keys by using sections, and map the mouse between sections to    deliniate where the user is clicking
+9. Divide piano keys by using sections, and map the mouse between sections to    deliniate where the user is clicking. Opacity values were implemented for each section during this time, to provide affordance to the user so they would know it was their turn to click on the keys and replay the pattern.
 10. function(mousePressed), if checking = true
 11. Use a series of else/if statements to push values for the playerArray (generates values depending on which piano keys the user clicks on--"current section")
 12. Compare the fillArray and playerArray within a for loop
@@ -51,6 +51,8 @@ Psuedocode:
 16. If doneChecking = true, lost = true and win = false, display text "LOSE!"     and show start button to begin new game and reset game
 17. If doneChecking = true, lost = false and win = true, display text "WIN!"     and show start button to begin new game and reset game
 18. Repeat to step 1
+
+NOTE: A hack had to be made in the code--there was an bug, if a note was selected twice or more in a row in the origianl given pattern, the key would stay highlighted, but the tone would only play once, as thats how it was coded to avoid the tone playing over and over and over again. To avoid this, the game had to be coded so that no note could be selected twice in a row. To do this, a combination of a for and while loop was used, in addition to a new array called NoteArray. The NoteArray would pick the random letters (c through b), and within the for and while loop, it would check to make sure no letter could be picked twice in a row. From there, it would push the note values into the fillArray, which then prompted the piano to illuminate, playing the pattern and associated sounds. 
 
 NOTE: In my particular code, there is an additional "newGame" button that is always hidden. The user does not need to see it or click it, but some componnet of it coincides with the start button, allowing it reset the game once it has already been played. 
     

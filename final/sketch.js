@@ -2,7 +2,9 @@ var button;
 
 var newButton;
 
-var fillArray = ["c", "d", "e", "f", "g", "a", "b"];
+var fillArray = [];
+
+var notesArray = ["c", "d", "e", "f", "g", "a", "b"];
 
 var fillColor = "yellow";
 
@@ -19,7 +21,7 @@ var section6 = 610;
 var currentSection = 0;
 
 var playPrevMills = 0;
-var playInterval = 3000;
+var playInterval = 2000;
 var playCounter = 0;
 
 var game = false;
@@ -46,6 +48,10 @@ var ASoundPlayed = false;
 var PlayBSound = false;
 var BSoundPlayed = false;
 
+var gameLength = 0;
+
+var randomLetter;
+
 
 function preload() {
     CSound = loadSound('sounds/C.mp3');
@@ -66,7 +72,7 @@ function setup() {
 
     newButton = createButton('New Game');
     newButton.position(330, 450);
-    button.mousePressed(newGame);
+    newButton.mousePressed(newGame);
     newButton.hide();
 
 }
@@ -81,6 +87,7 @@ function draw() {
 
         var currentLetter = fillArray[playCounter];
         console.log(currentLetter);
+
 
         if (millis() - playPrevMills > playInterval) {
             playCounter++;
@@ -106,6 +113,7 @@ function draw() {
     if (currentLetter == 'c') {
         fill(fillColor);
         PlayCSound = true;
+
     } else {
         fill(255);
         PlayCSound = false;
@@ -143,17 +151,17 @@ function draw() {
     rect(290, 75, 80, 300);
 
     //G
-      if (currentLetter == 'g') {
+    if (currentLetter == 'g') {
         fill(fillColor);
         PlayGSound = true;
     } else {
         fill(255);
         PlayGSound = false;
     }
-        rect(370, 75, 80, 300);
-    
+    rect(370, 75, 80, 300);
+
     //A
-      if (currentLetter == 'a') {
+    if (currentLetter == 'a') {
         fill(fillColor);
         PlayASound = true;
     } else {
@@ -161,9 +169,9 @@ function draw() {
         PlayASound = false;
     }
     rect(450, 75, 80, 300);
-    
+
     //B
-      if (currentLetter == 'b') {
+    if (currentLetter == 'b') {
         fill(fillColor);
         PlayBSound = true;
     } else {
@@ -171,7 +179,7 @@ function draw() {
         PlayBSound = false;
     }
     rect(530, 75, 80, 300);
-   
+
     //Sounds//////////////////////////
 
 
@@ -179,9 +187,12 @@ function draw() {
         PlayCSound = false;
         CSoundPlayed = true;
         CSound.play();
+
     } else if (PlayCSound == false && CSoundPlayed == true) {
         CSound.stop();
         CSoundPlayed = false;
+
+
     }
 
     if (PlayDSound == true && DSoundPlayed == false) {
@@ -192,6 +203,8 @@ function draw() {
     } else if (PlayDSound == false && DSoundPlayed == true) {
         DSound.stop();
         DSoundPlayed = false;
+
+
     }
 
     if (PlayESound == true && ESoundPlayed == false) {
@@ -201,6 +214,7 @@ function draw() {
     } else if (PlayESound == false && ESoundPlayed == true) {
         ESound.stop();
         ESoundPlayed = false;
+
     }
 
     if (PlayFSound == true && FSoundPlayed == false) {
@@ -210,36 +224,44 @@ function draw() {
     } else if (PlayFSound == false && FSoundPlayed == true) {
         FSound.stop();
         FSoundPlayed = false;
+
+
     }
-    
-        if (PlayGSound == true && GSoundPlayed == false) {
+
+    if (PlayGSound == true && GSoundPlayed == false) {
         PlayGSound = false;
         GSoundPlayed = true;
         GSound.play();
     } else if (PlayGSound == false && GSoundPlayed == true) {
         GSound.stop();
         GSoundPlayed = false;
+
+
     }
-    
-        if (PlayASound == true && ASoundPlayed == false) {
+
+    if (PlayASound == true && ASoundPlayed == false) {
         PlayASound = false;
         ASoundPlayed = true;
         ASound.play();
     } else if (PlayASound == false && ASoundPlayed == true) {
         ASound.stop();
         ASoundPlayed = false;
+
+
     }
-    
-        if (PlayBSound == true && BSoundPlayed == false) {
+
+    if (PlayBSound == true && BSoundPlayed == false) {
         PlayBSound = false;
         BSoundPlayed = true;
         BSound.play();
     } else if (PlayBSound == false && BSoundPlayed == true) {
         BSound.stop();
         BSoundPlayed = false;
+
+
     }
 
-    
+
 
 
     //////////////////////////////////////////
@@ -265,36 +287,65 @@ function draw() {
     if (mouseX > 0 && mouseX <= section0) {
 
         currentSection = 0;
+
+        if (checking == true) {
+            fill(0, 0, 0, 125);
+            rect(50, 75, 80, 300);
+        }
+
+
+
     } else if (mouseX > section0 && mouseX <= section1) {
         currentSection = 1;
 
+        if (checking == true) {
+            fill(0, 0, 0, 125);
+            rect(130, 75, 80, 300);
+        }
+
     } else if (mouseX > section1 && mouseX <= section2) {
         currentSection = 2;
-
+        if (checking == true) {
+            fill(0, 0, 0, 125);
+            rect(210, 75, 80, 300);
+        }
     } else if (mouseX > section2 && mouseX <= section3) {
         currentSection = 3;
-
+        if (checking == true) {
+            fill(0, 0, 0, 125);
+            rect(290, 75, 80, 300);
+        }
     } else if (mouseX > section3 && mouseX <= section4) {
         currentSection = 4;
-    }else if (mouseX > section4 && mouseX <= section5) {
+        if (checking == true) {
+            fill(0, 0, 0, 125);
+            rect(370, 75, 80, 300);
+        }
+    } else if (mouseX > section4 && mouseX <= section5) {
         currentSection = 5;
-    }else if (mouseX > section5 && mouseX <= width) {
+        if (checking == true) {
+            fill(0, 0, 0, 125);
+            rect(450, 75, 80, 300);
+        }
+    } else if (mouseX > section5 && mouseX <= width) {
         currentSection = 6;
+        if (checking == true) {
+            fill(0, 0, 0, 125);
+            rect(530, 75, 80, 300);
+        }
     }
 
-    if (doneChecking == true && lost == true && win == false) {
+    if (doneChecking == true && lost == true && win == false && game == false) {
 
         text("LOSE!", 300, 450, 400, 250);
         button.show();
-        playerArray = [];
 
 
     }
 
-    if (doneChecking == true && win == true && lost == false) {
+    if (doneChecking == true && win == true && lost == false && game == false) {
         text("WIN!", 300, 450, 400, 250);
         button.show();
-        playerArray = [];
 
 
     }
@@ -304,13 +355,53 @@ function draw() {
 
 function startGame() {
     game = true;
+    doneChecking = false;
+    checking = false;
+    lost = false;
+    win = false;
+    playerArray = [];
+    fillArray = [];
+
+    playPrevMills = millis();
+
+    gameLength = int(random(1, 11));
+    console.log(gameLength);
+
+    for (var i = 0; i < gameLength; i++) {
+        var randomLetter = 0;
+        //console.log(notesArray[randomLetter]);
+        if (i > 0) {
+            console.log("in here");
+            randomLetter = int(random(notesArray.length));
+            while (fillArray[i - 1] == notesArray[randomLetter]) {
+                randomLetter = int(random(notesArray.length));
+                console.log("generate new number " + notesArray[randomLetter]);
+
+            }
+
+            fillArray.push(notesArray[randomLetter]);
+
+        } else {
+            randomLetter = int(random(notesArray.length));
+
+            fillArray.push(notesArray[randomLetter]);
+        }
+
+
+    }
+
+    console.log(fillArray);
 }
 
 function newGame() {
+
+    console.log("New Game");
     doneChecking = false;
     lost = false;
     win = false;
     game = true;
+
+    fillArray = [];
 
 }
 
@@ -331,20 +422,20 @@ function mousePressed() {
         } else if (currentSection == 3) {
             playerArray.push("f");
             FSound.play();
-        }else if (currentSection == 4) {
+        } else if (currentSection == 4) {
             playerArray.push("g");
             GSound.play();
-        }else if (currentSection == 5) {
+        } else if (currentSection == 5) {
             playerArray.push("a");
             ASound.play();
-        }else if (currentSection == 6) {
+        } else if (currentSection == 6) {
             playerArray.push("b");
             BSound.play();
         }
-            
-            
-            
-            
+
+
+
+
         console.log(currentSection);
         console.log(playerArray);
 
@@ -370,4 +461,5 @@ function mousePressed() {
             doneChecking = true;
         }
     }
+
 }
